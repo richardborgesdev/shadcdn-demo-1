@@ -1,13 +1,43 @@
-import { Button } from "@/components/ui/button";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar"
 
 export function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center min-h-[60vh] text-center gap-6 animate-fade-in">
-      <h1 className="text-4xl font-bold tracking-tight">Richard Borges</h1>
-      <p className="text-lg text-muted-foreground max-w-xl">
-        Frontend Developer passionate about building beautiful and accessible web experiences.
-      </p>
-      <Button className="animate-bounce">Contact Me</Button>
-    </section>
-  );
+    <div className="flex flex-row flex-wrap items-center gap-12">
+      <Avatar>
+        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+        <AvatarFallback>CN</AvatarFallback>
+      </Avatar>
+      <Avatar className="rounded-lg">
+        <AvatarImage
+          src="https://github.com/evilrabbit.png"
+          alt="@evilrabbit"
+        />
+        <AvatarFallback>ER</AvatarFallback>
+      </Avatar>
+      <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
+        <Avatar>
+          <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+        <Avatar>
+          <AvatarImage
+            src="https://github.com/maxleiter.png"
+            alt="@maxleiter"
+          />
+          <AvatarFallback>LR</AvatarFallback>
+        </Avatar>
+        <Avatar>
+          <AvatarImage
+            src="https://github.com/evilrabbit.png"
+            alt="@evilrabbit"
+          />
+          <AvatarFallback>ER</AvatarFallback>
+        </Avatar>
+      </div>
+    </div>
+  )
 }
